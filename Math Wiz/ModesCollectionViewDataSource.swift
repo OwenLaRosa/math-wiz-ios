@@ -17,8 +17,10 @@ class ModesCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ModesCollectionViewCell", for: indexPath) as! ModesCollectionViewCell
         
-        cell.modeNameLabel.text = kGameModes[indexPath.row].name
-        cell.modeLogoImageView.image = nil // TODO: assign image
+        let mode = kGameModes[indexPath.row]
+        
+        cell.modeNameLabel.text = mode.name
+        cell.modeLogoImageView.image = UIImage(named: mode.image)
         
         return cell
     }
