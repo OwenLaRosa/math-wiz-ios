@@ -14,6 +14,10 @@
 		5A91A9271EE62C330062B338 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A91A9251EE62C330062B338 /* LaunchScreen.storyboard */; };
 		5A91A9321EE62C340062B338 /* Math_WizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A91A9311EE62C340062B338 /* Math_WizTests.swift */; };
 		5A91A9431EE62E960062B338 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A91A9421EE62E960062B338 /* MainViewControllerTests.swift */; };
+		5A91A9451EE639260062B338 /* ModesCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A91A9441EE639260062B338 /* ModesCollectionViewDataSource.swift */; };
+		5A91A9471EE639AB0062B338 /* GameModes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A91A9461EE639AB0062B338 /* GameModes.swift */; };
+		5A91A9491EE63C4A0062B338 /* ModesCollectionViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A91A9481EE63C4A0062B338 /* ModesCollectionViewTests.swift */; };
+		5A91A9501EE640FE0062B338 /* ModesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A91A94F1EE640FE0062B338 /* ModesCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,10 @@
 		5A91A9311EE62C340062B338 /* Math_WizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math_WizTests.swift; sourceTree = "<group>"; };
 		5A91A9331EE62C340062B338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A91A9421EE62E960062B338 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
+		5A91A9441EE639260062B338 /* ModesCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModesCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		5A91A9461EE639AB0062B338 /* GameModes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModes.swift; sourceTree = "<group>"; };
+		5A91A9481EE63C4A0062B338 /* ModesCollectionViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModesCollectionViewTests.swift; sourceTree = "<group>"; };
+		5A91A94F1EE640FE0062B338 /* ModesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModesCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				5A91A91E1EE62C330062B338 /* MainViewController.swift */,
+				5A91A9441EE639260062B338 /* ModesCollectionViewDataSource.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -114,6 +123,7 @@
 		5A91A93D1EE62D7D0062B338 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5A91A94F1EE640FE0062B338 /* ModesCollectionViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -121,6 +131,7 @@
 		5A91A93E1EE62D830062B338 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5A91A9461EE639AB0062B338 /* GameModes.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -129,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				5A91A9421EE62E960062B338 /* MainViewControllerTests.swift */,
+				5A91A9481EE63C4A0062B338 /* ModesCollectionViewTests.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -252,8 +264,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A91A9471EE639AB0062B338 /* GameModes.swift in Sources */,
+				5A91A9451EE639260062B338 /* ModesCollectionViewDataSource.swift in Sources */,
 				5A91A91F1EE62C330062B338 /* MainViewController.swift in Sources */,
 				5A91A91D1EE62C330062B338 /* AppDelegate.swift in Sources */,
+				5A91A9501EE640FE0062B338 /* ModesCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +278,7 @@
 			files = (
 				5A91A9321EE62C340062B338 /* Math_WizTests.swift in Sources */,
 				5A91A9431EE62E960062B338 /* MainViewControllerTests.swift in Sources */,
+				5A91A9491EE63C4A0062B338 /* ModesCollectionViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
