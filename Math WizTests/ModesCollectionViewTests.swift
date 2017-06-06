@@ -19,6 +19,10 @@ class ModesCollectionViewTests: XCTestCase {
         let _ = sut.view
     }
     
+    func test_delegateAssigned() {
+        XCTAssertNotNil(sut.modesCollectionView.delegate)
+    }
+    
     func test_dataSourceAssigned() {
         XCTAssertTrue(sut.modesCollectionView.dataSource is ModesCollectionViewDataSource)
     }

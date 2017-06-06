@@ -54,24 +54,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="112" height="92"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mtl-Ft-7dO">
-                                                    <rect key="frame" x="3" y="71" width="109" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mtl-Ft-7dO">
+                                                    <rect key="frame" x="3" y="55" width="109" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fB1-rR-gLC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="112" height="67"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="112" height="55"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" red="0.47058823529999999" green="0.56470588239999997" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottomMargin" secondItem="Mtl-Ft-7dO" secondAttribute="bottom" constant="-8" id="0i4-Cw-21K"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="Mtl-Ft-7dO" secondAttribute="bottom" constant="8" id="0i4-Cw-21K"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="Mtl-Ft-7dO" secondAttribute="trailing" constant="-8" id="1sA-vB-X1S"/>
                                             <constraint firstItem="Mtl-Ft-7dO" firstAttribute="leading" secondItem="bRf-9r-8Xh" secondAttribute="leadingMargin" constant="-5" id="YGl-69-c5M"/>
                                             <constraint firstItem="fB1-rR-gLC" firstAttribute="leading" secondItem="bRf-9r-8Xh" secondAttribute="leadingMargin" constant="-8" id="b1d-2C-RkL"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="fB1-rR-gLC" secondAttribute="trailing" constant="-8" id="uJf-CZ-iLW"/>
-                                            <constraint firstItem="Mtl-Ft-7dO" firstAttribute="top" secondItem="fB1-rR-gLC" secondAttribute="bottom" constant="4" id="yVx-gp-jut"/>
+                                            <constraint firstItem="Mtl-Ft-7dO" firstAttribute="top" secondItem="fB1-rR-gLC" secondAttribute="bottom" id="yVx-gp-jut"/>
                                             <constraint firstItem="fB1-rR-gLC" firstAttribute="top" secondItem="bRf-9r-8Xh" secondAttribute="topMargin" constant="-8" id="ytQ-ZG-ZaM"/>
                                         </constraints>
                                         <connections>
