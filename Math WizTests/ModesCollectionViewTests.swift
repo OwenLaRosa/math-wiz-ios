@@ -35,7 +35,7 @@ class ModesCollectionViewTests: XCTestCase {
         XCTAssertNotEqual(numItems, 0)
         for i in 0..<numItems {
             let indexPath = IndexPath(item: i, section: 0)
-            let cell = sut.modesCollectionView.cellForItem(at: indexPath) as? ModesCollectionViewCell
+            let cell = sut.modesCollectionView.dataSource?.collectionView(sut.modesCollectionView, cellForItemAt: indexPath) as? ModesCollectionViewCell
             
             // did the cell load successfully?
             XCTAssertNotNil(cell)
@@ -48,7 +48,7 @@ class ModesCollectionViewTests: XCTestCase {
             XCTAssertEqual(cell?.modeNameLabel.text, kGameModes[i].name)
             
             // is there an image?
-            XCTAssertNotNil(cell?.modeLogoImageView)
+            XCTAssertNotNil(cell?.modeLogoImageView.image)
         }
     }
     
