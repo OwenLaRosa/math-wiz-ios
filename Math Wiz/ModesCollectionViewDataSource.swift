@@ -22,6 +22,9 @@ class ModesCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         cell.modeNameLabel.text = mode.name
         cell.modeLogoImageView.image = UIImage(named: mode.image)
         
+        // cells should have rounded corners
+        cell.layer.cornerRadius = 20
+        
         return cell
     }
     
