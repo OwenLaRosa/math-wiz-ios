@@ -47,4 +47,20 @@ class GameplayViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.solutionLabel.text, "")
     }
     
+    func test_checkAnswerCorrect() {
+        let correctAnswers = sut.correctAnswers
+        let answer = sut.currentProblem?.solution
+        sut.solutionLabel.text = "\(answer!.doubleValue)"
+        sut.checkAnswer()
+        XCTAssertEqual(correctAnswers + 1, sut.correctAnswers)
+    }
+    
+    func test_checkAnswerIncorrect() {
+        let correctAnswers = sut.correctAnswers
+        let answer = sut.currentProblem?.solution
+        sut.solutionLabel.text = "\(answer!.doubleValue + 1)"
+        sut.checkAnswer()
+        XCTAssertEqual(correctAnswers, sut.correctAnswers)
+    }
+    
 }

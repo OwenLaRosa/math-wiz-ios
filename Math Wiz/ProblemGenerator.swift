@@ -8,12 +8,12 @@
 
 import Foundation
 
+struct Problem {
+    let problem: String
+    let solution: NSNumber
+}
+
 class ProblemGenerator {
-    
-    struct Problem {
-        let problem: String
-        let solution: NSNumber
-    }
     
     enum Digits: Int {
         case one = 0, two, three, four

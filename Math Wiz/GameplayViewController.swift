@@ -15,12 +15,19 @@ class GameplayViewController: UIViewController {
     
     @IBOutlet weak var timeLabel: UILabel!
     
-    var currentProblem: ProblemGenerator.Problem?
+    var correctAnswers = 0
+    var problemCount = 10
+    var problems = [Problem]()
+    var currentProblem: Problem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currentProblem = ProblemGenerator.shared.getAdditionProblem(digits1: .two, digits2: .two)
+        for i in 0..<problemCount {
+            problems.append(ProblemGenerator.shared.getAdditionProblem(digits1: .two, digits2: .two))
+        }
+        
+        currentProblem = problems.last
         problemLabel.text = currentProblem?.problem
     }
     
@@ -67,7 +74,33 @@ class GameplayViewController: UIViewController {
      Finishes the problem, initiates grading, and moves to the next problem
      */
     @IBAction func submitButtonTapped(_ sender: UIButton) {
-        
+        goToNextProblem()
+    }
+    
+    /**
+     Checks the answer and switches to the next problem, if available
+     */
+    func goToNextProblem() {
+        checkAnswer()
+        problems.removeLast()
+        problemLabel.text = ""
+        solutionLabel.text = ""
+        if problems.count > 0 {
+            currentProblem = problems.last
+            problemLabel.text = currentProblem?.problem
+        }
+    }
+    
+    /**
+     Increments the correct answer count if the solution is correct
+     */
+    func checkAnswer() {
+        guard let solution = Double(solutionLabel.text!) else {
+            return
+        }
+        if solution == currentProblem?.solution.doubleValue {
+            correctAnswers += 1
+        }
     }
     
 }
