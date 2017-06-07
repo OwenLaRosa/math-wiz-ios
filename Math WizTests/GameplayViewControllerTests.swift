@@ -26,9 +26,25 @@ class GameplayViewControllerTests: XCTestCase {
             testButton.tag = i
             sut.inputButtonTapped(testButton)
         }
-        
         XCTAssertEqual(sut.solutionLabel.text, "0123456789.x-+")
-        
+    }
+    
+    func test_backButtonOneChar() {
+        sut.solutionLabel.text = "x"
+        sut.backButtonTapped(UIButton())
+        XCTAssertEqual(sut.solutionLabel.text, "")
+    }
+    
+    func testBackButtonMultipleChars() {
+        sut.solutionLabel.text = "xx"
+        sut.backButtonTapped(UIButton())
+        XCTAssertEqual(sut.solutionLabel.text, "x")
+    }
+    
+    func testBackButtonNoChars() {
+        sut.solutionLabel.text = ""
+        sut.backButtonTapped(UIButton())
+        XCTAssertEqual(sut.solutionLabel.text, "")
     }
     
 }

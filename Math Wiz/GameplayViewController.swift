@@ -44,7 +44,9 @@ class GameplayViewController: UIViewController {
      Clears most recently typed character
      */
     @IBAction func backButtonTapped(_ sender: UIButton) {
-        
+        if solutionLabel.text!.characters.count > 0 {
+            solutionLabel.text = solutionLabel.text!.substring(to: solutionLabel.text!.index(before: solutionLabel.text!.endIndex))
+        }
     }
     
     /**
