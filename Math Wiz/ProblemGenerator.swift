@@ -34,4 +34,13 @@ class ProblemGenerator {
         return Problem(problem: "\(number1) + \(number2)", solution: (number1 + number2) as NSNumber)
     }
     
+    func getSubtractionProblem(digits1: Digits, digits2: Digits) -> Problem {
+        let number1 = Int(arc4random() % digitsMap[digits1]!) + 1
+        let number2 = Int(arc4random() % digitsMap[digits2]!) + 1
+        // problems should always have positive answer or 0
+        let higher = max(number1, number2)
+        let lower = min(number1, number2)
+        return Problem(problem: "\(higher) - \(lower)", solution: (higher - lower) as NSNumber)
+    }
+    
 }

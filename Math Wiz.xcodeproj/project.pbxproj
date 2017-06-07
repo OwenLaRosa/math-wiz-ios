@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A25351F1EE8A7C800E14B49 /* ProblemGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25351E1EE8A7C800E14B49 /* ProblemGeneratorTests.swift */; };
 		5A7D9EA71EE784B3003ECDCE /* GameplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7D9EA61EE784B3003ECDCE /* GameplayViewController.swift */; };
 		5A7D9EA91EE784F1003ECDCE /* GameplayViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7D9EA81EE784F1003ECDCE /* GameplayViewControllerTests.swift */; };
 		5A7D9EAB1EE796DE003ECDCE /* ProblemGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7D9EAA1EE796DE003ECDCE /* ProblemGenerator.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A25351E1EE8A7C800E14B49 /* ProblemGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProblemGeneratorTests.swift; sourceTree = "<group>"; };
 		5A7D9EA61EE784B3003ECDCE /* GameplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameplayViewController.swift; sourceTree = "<group>"; };
 		5A7D9EA81EE784F1003ECDCE /* GameplayViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameplayViewControllerTests.swift; sourceTree = "<group>"; };
 		5A7D9EAA1EE796DE003ECDCE /* ProblemGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProblemGenerator.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		5A91A9411EE62DC90062B338 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5A25351E1EE8A7C800E14B49 /* ProblemGeneratorTests.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A25351F1EE8A7C800E14B49 /* ProblemGeneratorTests.swift in Sources */,
 				5A91A9321EE62C340062B338 /* Math_WizTests.swift in Sources */,
 				5A91A9431EE62E960062B338 /* MainViewControllerTests.swift in Sources */,
 				5A7D9EA91EE784F1003ECDCE /* GameplayViewControllerTests.swift in Sources */,
