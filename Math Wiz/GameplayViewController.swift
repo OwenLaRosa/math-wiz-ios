@@ -16,6 +16,14 @@ class GameplayViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     
     var solutionText = ""
+    var currentProblem: ProblemGenerator.Problem?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        currentProblem = ProblemGenerator.shared.getAdditionProblem(digits1: .two, digits2: .two)
+        problemLabel.text = currentProblem?.problem
+    }
     
     /**
      Action is assigned to
