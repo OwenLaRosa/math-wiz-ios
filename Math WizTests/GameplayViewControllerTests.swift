@@ -19,4 +19,16 @@ class GameplayViewControllerTests: XCTestCase {
         _ = sut.view
     }
     
+    func test_inputButtons() {
+        let testButton = UIButton()
+        // this function reacts to 13 different buttons, 0 - 9, ., x, -, +
+        for i in 0..<14 {
+            testButton.tag = i
+            sut.inputButtonTapped(testButton)
+        }
+        
+        XCTAssertEqual(sut.solutionLabel.text, "0123456789.x-+")
+        
+    }
+    
 }

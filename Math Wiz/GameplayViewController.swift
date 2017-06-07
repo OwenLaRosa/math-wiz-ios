@@ -15,6 +15,8 @@ class GameplayViewController: UIViewController {
     
     @IBOutlet weak var timeLabel: UILabel!
     
+    var solutionText = ""
+    
     /**
      Action is assigned to
         1. all numbered buttons 0 - 9
@@ -23,7 +25,18 @@ class GameplayViewController: UIViewController {
         4. The plus and minus buttons
      */
     @IBAction func inputButtonTapped(_ sender: UIButton) {
-        
+        if sender.tag >= 0 && sender.tag <= 9 {
+            solutionText += "\(sender.tag)"
+        } else if sender.tag == 10 {
+            solutionText += "."
+        } else if sender.tag == 11 {
+            solutionText += "x"
+        } else if sender.tag == 12 {
+            solutionText += "-"
+        } else if sender.tag == 13 {
+            solutionText += "+"
+        }
+        solutionLabel.text = solutionText
     }
     
     /**
