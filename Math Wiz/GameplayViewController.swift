@@ -15,6 +15,9 @@ class GameplayViewController: UIViewController {
     
     @IBOutlet weak var timeLabel: UILabel!
     
+    var digits1: Digits = .one
+    var digits2: Digits = .one
+    
     var correctAnswers = 0
     var problemCount = 10
     var problems = [Problem]()
@@ -24,7 +27,7 @@ class GameplayViewController: UIViewController {
         super.viewDidLoad()
         
         for i in 0..<problemCount {
-            problems.append(ProblemGenerator.shared.getAdditionProblem(digits1: .two, digits2: .two))
+            problems.append(ProblemGenerator.shared.getAdditionProblem(digits1: digits1, digits2: digits2))
         }
         
         currentProblem = problems.last

@@ -13,11 +13,11 @@ struct Problem {
     let solution: NSNumber
 }
 
+enum Digits: Int {
+    case one = 0, two, three, four
+}
+
 class ProblemGenerator {
-    
-    enum Digits: Int {
-        case one = 0, two, three, four
-    }
     
     private final let digitsMap: [Digits: UInt32] = [
         .one: 9,
