@@ -15,7 +15,6 @@ class GameplayViewController: UIViewController {
     
     @IBOutlet weak var timeLabel: UILabel!
     
-    var solutionText = ""
     var currentProblem: ProblemGenerator.Problem?
     
     override func viewDidLoad() {
@@ -34,17 +33,16 @@ class GameplayViewController: UIViewController {
      */
     @IBAction func inputButtonTapped(_ sender: UIButton) {
         if sender.tag >= 0 && sender.tag <= 9 {
-            solutionText += "\(sender.tag)"
+            solutionLabel.text! += "\(sender.tag)"
         } else if sender.tag == 10 {
-            solutionText += "."
+            solutionLabel.text! += "."
         } else if sender.tag == 11 {
-            solutionText += "x"
+            solutionLabel.text! += "x"
         } else if sender.tag == 12 {
-            solutionText += "-"
+            solutionLabel.text! += "-"
         } else if sender.tag == 13 {
-            solutionText += "+"
+            solutionLabel.text! += "+"
         }
-        solutionLabel.text = solutionText
     }
     
     /**
