@@ -74,7 +74,9 @@ class GameplayViewController: UIViewController {
      Finishes the problem, initiates grading, and moves to the next problem
      */
     @IBAction func submitButtonTapped(_ sender: UIButton) {
-        goToNextProblem()
+        if currentProblem != nil {
+            goToNextProblem()
+        }
     }
     
     /**
