@@ -49,4 +49,11 @@ class ProblemGenerator {
         return Problem(problem: "\(number1) • \(number2)", solution: (number1 * number2) as NSNumber)
     }
     
+    func getDivisionProblem(divisorDigits: Digits) -> Problem {
+        let number1 = Int(arc4random() % digitsMap[divisorDigits]!) + 1
+        let number2 = Int(arc4random() % digitsMap[divisorDigits]!) + 1
+        let dividend = number1 * number2
+        return Problem(problem: "\(dividend) ÷ \(number1) ", solution: number2 as NSNumber)
+    }
+    
 }

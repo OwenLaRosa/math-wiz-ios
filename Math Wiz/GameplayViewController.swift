@@ -15,7 +15,8 @@ class GameplayViewController: UIViewController {
     
     @IBOutlet weak var timeLabel: UILabel!
     
-    var gameMode = 2
+    var gameMode = 3
+    var divisorDigits: Digits = .one
     var digits1: Digits = .one
     var digits2: Digits = .one
     
@@ -35,6 +36,8 @@ class GameplayViewController: UIViewController {
                 problems.append(ProblemGenerator.shared.getSubtractionProblem(digits1: digits1, digits2: digits2))
             case 2:
                 problems.append(ProblemGenerator.shared.getMultiplicationProblem(digits1: digits1, digits2: digits2))
+            case 3:
+                problems.append(ProblemGenerator.shared.getDivisionProblem(divisorDigits: divisorDigits))
             default:
                 break
             }

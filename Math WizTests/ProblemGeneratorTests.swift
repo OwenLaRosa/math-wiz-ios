@@ -32,4 +32,9 @@ class ProblemGeneratorTests: XCTestCase {
         XCTAssertTrue(problem.problem.contains("•"))
     }
     
+    func test_divisionContainsDivideSymbol() {
+        let problem = sut.getDivisionProblem(divisorDigits: .one)
+        XCTAssertTrue(problem.problem.contains("÷"))
+    }
+    
 }
