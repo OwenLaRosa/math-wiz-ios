@@ -43,4 +43,10 @@ class ProblemGenerator {
         return Problem(problem: "\(higher) - \(lower)", solution: (higher - lower) as NSNumber)
     }
     
+    func getMultiplicationProblem(digits1: Digits, digits2: Digits) -> Problem {
+        let number1 = Int(arc4random() % digitsMap[digits1]!) + 1
+        let number2 = Int(arc4random() % digitsMap[digits2]!) + 1
+        return Problem(problem: "\(number1) • \(number2)", solution: (number1 * number2) as NSNumber)
+    }
+    
 }

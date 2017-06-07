@@ -27,4 +27,9 @@ class ProblemGeneratorTests: XCTestCase {
         XCTAssertTrue(problem.problem.contains("-"))
     }
     
+    func test_multiplicationContainsTimesSymbol() {
+        let problem = sut.getMultiplicationProblem(digits1: .one, digits2: .one)
+        XCTAssertTrue(problem.problem.contains("•"))
+    }
+    
 }
