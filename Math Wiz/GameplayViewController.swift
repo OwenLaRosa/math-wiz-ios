@@ -21,7 +21,10 @@ class GameplayViewController: UIViewController {
     var digits1: Digits = .one
     var digits2: Digits = .one
     
+    // number of questions the player got correct
     var correctAnswers = 0
+    // number of questions player attempted (used for time trial)
+    var totalAnswers = 0
     var problemCount = 10
     var problems = [Problem]()
     var currentProblem: Problem?
@@ -137,6 +140,10 @@ class GameplayViewController: UIViewController {
     func checkAnswer() {
         guard let solution = Double(solutionLabel.text!) else {
             return
+        }
+        if gameType == .timeTrial {
+            // we don't know the total number of problems, so we count the number the user attempted to solve
+            totalAnswers += 1
         }
         if solution == currentProblem?.solution.doubleValue {
             correctAnswers += 1
