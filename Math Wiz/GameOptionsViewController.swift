@@ -30,9 +30,23 @@ class GameOptionsViewController: UIViewController {
         if gameTypeSegment.selectedSegmentIndex == 0 {
             gameTypeNameLabel.text = Constants.GameTypeNames.timeTrial
             gameTypeDescriptionLabel.text = Constants.GameTypeDescriptions.timeTrial
+            
+            minutesOrProblemsStepper.minimumValue = 10
+            minutesOrProblemsStepper.maximumValue = 100
+            minutesOrProblemsStepper.stepValue = 5
+            minutesOrProblemsStepper.value = 10
+            
+            minutesOrProblemsLabel.text = "\(Constants.GameOptionsPrefixes.problems): 10"
         } else if gameTypeSegment.selectedSegmentIndex == 1 {
             gameTypeNameLabel.text = Constants.GameTypeNames.againstTheClock
             gameTypeDescriptionLabel.text = Constants.GameTypeDescriptions.againstTheClock
+            
+            minutesOrProblemsStepper.minimumValue = 1
+            minutesOrProblemsStepper.maximumValue = 10
+            minutesOrProblemsStepper.stepValue = 1
+            minutesOrProblemsStepper.value = 1
+            
+            minutesOrProblemsLabel.text = "\(Constants.GameOptionsPrefixes.minutes): 1"
         }
     }
     

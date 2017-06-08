@@ -20,4 +20,10 @@ class Constants {
         static let againstTheClock = "Solve as many problems as you can in a limited time."
     }
     
+    struct GameOptionsPrefixes {
+        static let problems = "Problems"
+        static let minutes = "Minutes"
+        static let maxDigits = "Max Digits"
+    }
+    
 }
