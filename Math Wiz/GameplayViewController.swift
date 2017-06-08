@@ -16,7 +16,7 @@ class GameplayViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     
     var gameMode = 3
-    var gameType: GameType = .againstTheClock
+    var gameType: GameType = .timeTrial
     var divisorDigits: Digits = .one
     var digits1: Digits = .one
     var digits2: Digits = .one
@@ -48,7 +48,7 @@ class GameplayViewController: UIViewController {
         if gameType == .timeTrial {
             gameTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: {timer in
                 self.gameSeconds += 1
-                self.timeLabel.text = "\(self.gameSeconds)"
+                self.timeLabel.text = "\(Utils.shared.formatTime(seconds: self.gameSeconds))"
             })
             for _ in 0..<problemCount {
                 problems.append(getProblem())
@@ -57,7 +57,8 @@ class GameplayViewController: UIViewController {
         } else if gameType == .againstTheClock {
             gameTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: {timer in
                 self.gameSeconds += 1
-                self.timeLabel.text = "\(self.timeLimit - self.gameSeconds)"
+                self.timeLabel.text = Utils.shared.formatTime(seconds: self.timeLimit - self.gameSeconds)
+                //"\(self.timeLimit - self.gameSeconds)"
                 if self.gameSeconds == self.timeLimit {
                     self.gameTimer.invalidate()
                 }
