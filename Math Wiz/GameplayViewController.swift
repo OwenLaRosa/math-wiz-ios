@@ -48,19 +48,9 @@ class GameplayViewController: UIViewController {
                 self.timeLabel.text = "\(self.gameSeconds)"
             })
             for _ in 0..<problemCount {
-                switch gameMode {
-                case 0:
-                    problems.append(ProblemGenerator.shared.getAdditionProblem(digits1: digits1, digits2: digits2))
-                case 1:
-                    problems.append(ProblemGenerator.shared.getSubtractionProblem(digits1: digits1, digits2: digits2))
-                case 2:
-                    problems.append(ProblemGenerator.shared.getMultiplicationProblem(digits1: digits1, digits2: digits2))
-                case 3:
-                    problems.append(ProblemGenerator.shared.getDivisionProblem(divisorDigits: divisorDigits))
-                default:
-                    break
-                }
+                problems.append(getProblem())
             }
+            currentProblem = problems.last
         } else if gameType == .againstTheClock {
             gameTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: {timer in
                 self.gameSeconds += 1
@@ -69,9 +59,8 @@ class GameplayViewController: UIViewController {
                     self.gameTimer.invalidate()
                 }
             })
+            currentProblem = getProblem()
         }
-        
-        currentProblem = problems.last
         problemLabel.text = currentProblem?.problem
     }
     
@@ -128,11 +117,16 @@ class GameplayViewController: UIViewController {
      */
     func goToNextProblem() {
         checkAnswer()
-        problems.removeLast()
         problemLabel.text = ""
         solutionLabel.text = ""
-        if problems.count > 0 {
-            currentProblem = problems.last
+        if gameType == .timeTrial {
+            problems.removeLast()
+            if problems.count > 0 {
+                currentProblem = problems.last
+                problemLabel.text = currentProblem?.problem
+            }
+        } else if gameType == .againstTheClock {
+            currentProblem = getProblem()
             problemLabel.text = currentProblem?.problem
         }
     }
@@ -146,6 +140,21 @@ class GameplayViewController: UIViewController {
         }
         if solution == currentProblem?.solution.doubleValue {
             correctAnswers += 1
+        }
+    }
+    
+    func getProblem() -> Problem! {
+        switch gameMode {
+        case 0:
+            return ProblemGenerator.shared.getAdditionProblem(digits1: digits1, digits2: digits2)
+        case 1:
+            return ProblemGenerator.shared.getSubtractionProblem(digits1: digits1, digits2: digits2)
+        case 2:
+            return ProblemGenerator.shared.getMultiplicationProblem(digits1: digits1, digits2: digits2)
+        case 3:
+            return ProblemGenerator.shared.getDivisionProblem(divisorDigits: divisorDigits)
+        default:
+            return nil
         }
     }
     
