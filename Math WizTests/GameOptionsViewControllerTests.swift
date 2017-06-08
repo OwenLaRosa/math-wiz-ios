@@ -23,4 +23,36 @@ class GameOptionsViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.view)
     }
     
+    func test_nameInitialText() {
+        XCTAssertEqual(sut.gameTypeNameLabel.text, Constants.GameTypeNames.timeTrial)
+    }
+    
+    func test_segmentValue0_nameTextChanged() {
+        sut.gameTypeSegment.selectedSegmentIndex = 0
+        sut.gameTypeSegment.sendActions(for: .valueChanged)
+        XCTAssertEqual(sut.gameTypeNameLabel.text, Constants.GameTypeNames.timeTrial)
+    }
+    
+    func test_segmentValue1_nameTextChanged() {
+        sut.gameTypeSegment.selectedSegmentIndex = 1
+        sut.gameTypeSegment.sendActions(for: .valueChanged)
+        XCTAssertEqual(sut.gameTypeNameLabel.text, Constants.GameTypeNames.againstTheClock)
+    }
+    
+    func test_descriptionInitialText() {
+        XCTAssertEqual(sut.gameTypeDescriptionLabel.text, Constants.GameTypeDescriptions.timeTrial)
+    }
+    
+    func test_segmentValue0_descriptionTextChanged() {
+        sut.gameTypeSegment.selectedSegmentIndex = 0
+        sut.gameTypeSegment.sendActions(for: .valueChanged)
+        XCTAssertEqual(sut.gameTypeDescriptionLabel.text, Constants.GameTypeDescriptions.timeTrial)
+    }
+    
+    func test_segmentValue1_descriptionTextChanged() {
+        sut.gameTypeSegment.selectedSegmentIndex = 1
+        sut.gameTypeSegment.sendActions(for: .valueChanged)
+        XCTAssertEqual(sut.gameTypeDescriptionLabel.text, Constants.GameTypeDescriptions.againstTheClock)
+    }
+    
 }

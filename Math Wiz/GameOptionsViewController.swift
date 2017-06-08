@@ -19,6 +19,23 @@ class GameOptionsViewController: UIViewController {
     @IBOutlet weak var maxDigitsLabel: UILabel!
     @IBOutlet weak var maxDigitsStepper: UIStepper!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        gameTypeSegment.selectedSegmentIndex = 0
+        gameTypeSegment.sendActions(for: .valueChanged)
+    }
+    
+    @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
+        if gameTypeSegment.selectedSegmentIndex == 0 {
+            gameTypeNameLabel.text = Constants.GameTypeNames.timeTrial
+            gameTypeDescriptionLabel.text = Constants.GameTypeDescriptions.timeTrial
+        } else if gameTypeSegment.selectedSegmentIndex == 1 {
+            gameTypeNameLabel.text = Constants.GameTypeNames.againstTheClock
+            gameTypeDescriptionLabel.text = Constants.GameTypeDescriptions.againstTheClock
+        }
+    }
+    
     @IBAction func startGameTapped(_ sender: UIButton) {
         
     }
