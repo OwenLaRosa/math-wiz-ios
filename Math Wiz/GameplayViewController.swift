@@ -16,6 +16,7 @@ class GameplayViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     
     var gameMode = 3
+    var gameType: GameType = .againstTheClock
     var divisorDigits: Digits = .one
     var digits1: Digits = .one
     var digits2: Digits = .one
@@ -25,22 +26,49 @@ class GameplayViewController: UIViewController {
     var problems = [Problem]()
     var currentProblem: Problem?
     
+    // timer that counts up for time trial mode
+    var upTimer: Timer!
+    
+    // timer that counts down for against the clock mode
+    var downTimer: Timer!
+    
+    // timer used to tick up or down depending on game mode
+    var gameTimer: Timer!
+    // maximum number of seconds allowed for the game
+    var timeLimit = 3
+    // number of seconds ellapsed
+    var gameSeconds = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for _ in 0..<problemCount {
-            switch gameMode {
-            case 0:
-                problems.append(ProblemGenerator.shared.getAdditionProblem(digits1: digits1, digits2: digits2))
-            case 1:
-                problems.append(ProblemGenerator.shared.getSubtractionProblem(digits1: digits1, digits2: digits2))
-            case 2:
-                problems.append(ProblemGenerator.shared.getMultiplicationProblem(digits1: digits1, digits2: digits2))
-            case 3:
-                problems.append(ProblemGenerator.shared.getDivisionProblem(divisorDigits: divisorDigits))
-            default:
-                break
+        if gameType == .timeTrial {
+            gameTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: {timer in
+                self.gameSeconds += 1
+                self.timeLabel.text = "\(self.gameSeconds)"
+            })
+            for _ in 0..<problemCount {
+                switch gameMode {
+                case 0:
+                    problems.append(ProblemGenerator.shared.getAdditionProblem(digits1: digits1, digits2: digits2))
+                case 1:
+                    problems.append(ProblemGenerator.shared.getSubtractionProblem(digits1: digits1, digits2: digits2))
+                case 2:
+                    problems.append(ProblemGenerator.shared.getMultiplicationProblem(digits1: digits1, digits2: digits2))
+                case 3:
+                    problems.append(ProblemGenerator.shared.getDivisionProblem(divisorDigits: divisorDigits))
+                default:
+                    break
+                }
             }
+        } else if gameType == .againstTheClock {
+            gameTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: {timer in
+                self.gameSeconds += 1
+                self.timeLabel.text = "\(self.timeLimit - self.gameSeconds)"
+                if self.gameSeconds == self.timeLimit {
+                    self.gameTimer.invalidate()
+                }
+            })
         }
         
         currentProblem = problems.last

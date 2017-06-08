@@ -20,6 +20,7 @@ class ProblemGeneratorTests: XCTestCase {
     func test_additionContainsPlus() {
         let problem = sut.getAdditionProblem(digits1: .one, digits2: .one)
         XCTAssertTrue(problem.problem.contains("+"))
+        XCTAssertNotNil(problem.problem.range(of: <#T##String#>, options: <#T##String.CompareOptions#>, range: <#T##Range<String.Index>?#>, locale: <#T##Locale?#>))
     }
     
     func test_subtractionContainsMinus() {

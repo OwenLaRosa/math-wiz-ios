@@ -20,3 +20,10 @@ let kGameModes = [
     GameMode(id: 2, name: "Multiplication", image: "multiplication"),
     GameMode(id: 3, name: "Division", image: "division")
 ]
+
+enum GameType: Int {
+    // user solves a predetermined number of problems in the best fastest time
+    case timeTrial = 0
+    // user solves as many problems as possible in a limited time
+    case againstTheClock = 1
+}
